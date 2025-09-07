@@ -12,11 +12,11 @@
     ../../modules/graphics.nix
     ../../modules/podman.nix
     ../../modules/vm.nix
-    # ../../modules/sunshine.nix
+    ../../modules/sunshine.nix
   ];
 
   # Some stuff that should exist independently.
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
   nixpkgs.config.allowUnfree = true;
 
   # Firmware stuff.
@@ -25,7 +25,7 @@
   # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_15;
 
   # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
@@ -74,6 +74,7 @@
   ];
   environment.systemPackages = [
     pkgs.kitty
+    pkgs.protonup
   ];
 
   # Graphics stuff.
@@ -85,14 +86,20 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  #STEAM.
+  programs.steam.enable = true;
+  programs.gamemode.enable = true;
+
   # Virtualization stuff.
   podman.enable = true;
   vm.enable = true;
   vm.kvm.enable = true;
+  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.guest.enable = true;
   # vm.waydroid.enable = true;
 
   # Sunshine (and Moonlight) stuff.
-  # sunshine.enable = true;
+  sunshine.enable = true;
 
   # Flatpak stuff.
   services.flatpak.enable = true;
@@ -124,7 +131,7 @@
       "kvm"
     ];
   };
-
+  virtualisation.vmware.guest.package = pkgs.open-vm-tools;
   # Variables stuff.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

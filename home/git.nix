@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "Hirakjyoti Kalita";
+    userName = "Hytkat";
     userEmail = "hytkate@gmail.com";
   };
 }
