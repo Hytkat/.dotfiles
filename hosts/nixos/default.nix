@@ -118,6 +118,9 @@
     openFirewall = true;
   };
 
+  # OpenSSH
+  services.openssh.enable = true;
+
   # Me!
   users.users.hytkat = {
     isNormalUser = true;
