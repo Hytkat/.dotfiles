@@ -3,7 +3,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "catppuccin_mocha";
+      theme = "catppuccin_macchiato";
       editor = {
         bufferline = "multiple";
         color-modes = true;

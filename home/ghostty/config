@@ -1,6 +1,6 @@
 command = fish
 
-theme = catppuccin-mocha
+theme = catppuccin-macchiato
 shell-integration = fish
 window-decoration = server
 window-padding-x = 10

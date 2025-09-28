@@ -8,7 +8,11 @@
   home.packages = [
     # themes and icons
     (pkgs.catppuccin-kde.override {
-      flavour = [ "mocha" ];
+      flavour = [
+
+        "macchiato"
+
+      ];
       accents = [ "mauve" ];
       winDecStyles = [ "classic" ];
     })
@@ -17,6 +21,7 @@
     pkgs.brave
     pkgs.bibata-cursors
     pkgs.btrfs-assistant
+    pkgs.bottles
     pkgs.prismlauncher
     pkgs.code-cursor
     pkgs.distrobox
