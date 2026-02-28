@@ -51,7 +51,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           inputs.niri.nixosModules.niri
-          ./hosts/nixos
+          ./hosts/hytkat
           ./modules/niri
         ];
       };

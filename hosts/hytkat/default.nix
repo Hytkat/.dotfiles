@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware.nix
     ../../modules/common-settings.nix
     ../../modules/trusted-substituters.nix
     ../../modules/security.nix
