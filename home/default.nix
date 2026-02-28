@@ -8,85 +8,68 @@
   home.packages = [
     # themes and icons
     (pkgs.catppuccin-kde.override {
-      flavour = [
-
-        "macchiato"
-
-      ];
+      flavour = [ "mocha" ];
       accents = [ "mauve" ];
       winDecStyles = [ "classic" ];
     })
     pkgs.autokey
-    pkgs.catppuccin
-    pkgs.brave
     pkgs.bibata-cursors
-    pkgs.btrfs-assistant
     pkgs.bottles
-    pkgs.prismlauncher
+    pkgs.brave
+    pkgs.catppuccin
     pkgs.code-cursor
     pkgs.distrobox
-    pkgs.fd
-    pkgs.freerdp
     pkgs.erdtree
-    pkgs.ffmpeg
     pkgs.fastfetch
-    pkgs.hdparm
-    pkgs.gcc
+    pkgs.fd
+    pkgs.ffmpeg
+    pkgs.freerdp
+    pkgs.gparted
+    pkgs.ghidra
+    # pkgs.hdparm
+    pkgs.i3-auto-layout
     pkgs.inotify-tools
-    pkgs.theme-obsidian2
+    pkgs.jetbrains.idea
     pkgs.jq
     pkgs.just
-    pkgs.jetbrains.idea-ultimate
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.kde-gtk-config
     pkgs.legcord
+    pkgs.libreoffice-qt-fresh
+    pkgs.librewolf
     pkgs.lsof
-    pkgs.mpv
     pkgs.maple-mono.NF
+    pkgs.mpv
     pkgs.nixd
-    pkgs.niri
     pkgs.nixfmt-rfc-style
-    pkgs.nix-search-tv
     pkgs.nix-output-monitor
-    pkgs.podman-compose
-    pkgs.pnpm
-    pkgs.nodePackages.json
-    pkgs.nodejs
-    pkgs.notion
+    pkgs.nix-search-tv
     pkgs.pika-backup
-    pkgs.python312Full
-    #pkgs.python311Packages.speechrecognition
-    pkgs.php
-    pkgs.jetbrains.pycharm-community
+    pkgs.podman-compose
+    pkgs.prismlauncher
+    pkgs.pear-desktop
     pkgs.ripgrep
-    pkgs.rPackages.react
-    pkgs.steam
-    pkgs.steam-run-free
     pkgs.signal-desktop
     pkgs.smartmontools
+    pkgs.steam
     pkgs.spectrwm
     pkgs.sublime
-    pkgs.i3-auto-layout
     pkgs.telegram-desktop
-    pkgs.torrent7z
-    pkgs.torrential
-    pkgs.unzip
+    pkgs.theme-obsidian2
     pkgs.unrar
-    pkgs.vscode-langservers-extracted
+    pkgs.unzip
     pkgs.vscode
-    pkgs.librewolf
-    pkgs.libreoffice-qt-fresh
+    pkgs.vscode-langservers-extracted
+    pkgs.vesktop
+    pkgs.wasistlos
     pkgs.wl-clipboard
-    pkgs.whatsapp-for-linux
-    pkgs.xfce.xfce4-pulseaudio-plugin
-    pkgs.xfce.xfce4-docklike-plugin
+    pkgs.xfce4-docklike-plugin
+    pkgs.xfce4-pulseaudio-plugin
     pkgs.yaml-language-server
     pkgs.youtube-music
     # fonts
     pkgs.nerd-fonts.jetbrains-mono
-    pkgs.steam
     pkgs.zed-editor
-
   ];
 
   # Fontconfig stuff.
@@ -117,6 +100,7 @@
     ./starship.nix
     ./yazi.nix
     ./zoxide.nix
+    ./niri.nix
   ];
 
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";

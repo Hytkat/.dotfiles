@@ -8,3 +8,6 @@ home-switch:
 alias ssn := system-switch-nixos
 system-switch-nixos:
     sudo nixos-rebuild switch --flake .#nixos
+alias ng := nix-garbage
+nix-garbage:
+    nix-collect-garbage -d

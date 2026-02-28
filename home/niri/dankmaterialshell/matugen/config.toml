@@ -1,0 +1,33 @@
+[config]
+
+[templates.helix]
+input_path = "/home/hytkat/.config/matugen/templates/helix/dankcolors.toml"
+output_path = "/home/hytkat/.config/helix/themes/dankcolors.toml"
+
+[templates.youtube-music]
+input_path = "/home/hytkat/.config/matugen/templates/youtube-music/dankcolors.css"
+output_path = "/home/hytkat/.config/YouTube Music/themes/dankcolors.css"
+
+[templates.zeditor]
+input_path = "/home/hytkat/.config/matugen/templates/zeditor/dankcolors.json"
+output_path = "/home/hytkat/.config/zed/themes/dankcolors.json"
+
+[templates.ghostty]
+input_path = "/home/hytkat/.config/matugen/templates/ghostty/dankcolors"
+output_path = "/home/hytkat/.config/ghostty/themes/dankcolors"
+
+[templates.tridactyl]
+input_path = "/home/hytkat/.config/matugen/templates/tridactyl/dankcolors.css"
+output_path = "/home/hytkat/.config/tridactyl/themes/dankcolors.css"
+
+[templates.yazi]
+input_path = "/home/hytkat/.config/matugen/templates/yazi/dankcolors.toml"
+output_path = "/home/hytkat/.config/yazi/theme.toml"
+
+[templates.vesktop]
+input_path = "/home/hytkat/.config/matugen/templates/vesktop/dankcolors.css"
+output_path = "/home/hytkat/.config/vesktop/themes/dankcolors.css"
+
+[templates.zellij]
+input_path = "/home/hytkat/.config/matugen/templates/zellij/dankcolors.kdl"
+output_path = "/home/hytkat/.config/zellij/themes/dankcolors.kdl"

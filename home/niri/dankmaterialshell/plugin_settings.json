@@ -1,0 +1,57 @@
+{
+  "displayMirror": {
+    "enabled": true,
+    "autoRefresh": true
+  },
+  "dockerManager": {
+    "enabled": true,
+    "dockerBinary": "podman",
+    "terminalApp": "ghostty --gtk-single-instance=true",
+    "shellPath": "/home/hytkat/.nix-profile/bin/fish"
+  },
+  "dankBitwarden": {
+    "enabled": true,
+    "trigger": "@",
+    "noTrigger": false
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "e100d420_afce_4f41_bb37_58887ccfc478"
+  },
+  "dankNotepadModule": {
+    "enabled": true
+  },
+  "easyEffects": {
+    "enabled": true,
+    "currentOutputIndex": -1,
+    "currentInputIndex": -1
+  },
+  "commandRunner": {
+    "enabled": true,
+    "terminal": "ghostty",
+    "history": [
+      "fish --help"
+    ],
+    "trigger": "$",
+    "noTrigger": false
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "trigger": ":"
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "!"
+  },
+  "webSearch": {
+    "enabled": true,
+    "searchEngines": [],
+    "defaultEngine": "duckduckgo",
+    "noTrigger": false,
+    "trigger": "&"
+  },
+  "dankHooks": {
+    "enabled": true
+  }
+}

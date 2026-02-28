@@ -1,7 +1,9 @@
-command = fish
 
-theme = catppuccin-macchiato
+command = fish;
+
+theme = "Catppuccin Macchiato"
 shell-integration = fish
 window-decoration = server
 window-padding-x = 10
 font-size = 14
+

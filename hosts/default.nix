@@ -13,6 +13,7 @@
     ../../modules/podman.nix
     ../../modules/vm.nix
     ../../modules/sunshine.nix
+    ../../modules/steam.nix
   ];
 
   # Some stuff that should exist independently.
@@ -25,7 +26,7 @@
   # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_6_15;
+  boot.kernelPackages = pkgs.linuxPackages_lqx;
 
   # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
@@ -65,7 +66,7 @@
 
   # Display Manager stuff.
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly.enable = false;
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = [
     pkgs.kdePackages.discover
@@ -74,7 +75,7 @@
   ];
   environment.systemPackages = [
     pkgs.kitty
-    pkgs.protonup
+    pkgs.protonup-ng
   ];
 
   # Graphics stuff.
@@ -86,16 +87,15 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  #STEAM.
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
+  #MONGODB.
+  services.mongodb.enable = true;
 
   # Virtualization stuff.
   podman.enable = true;
   vm.enable = true;
   vm.kvm.enable = true;
-  virtualisation.vmware.host.enable = true;
-  virtualisation.vmware.guest.enable = true;
+  # virtualisation.vmware.host.enable = true;
+  # virtualisation.vmware.guest.enable = true;
   # vm.waydroid.enable = true;
 
   # Sunshine (and Moonlight) stuff.
@@ -108,9 +108,13 @@
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
-  # Nix-ld.
+  #NIX-LD
   # programs.nix-ld.enable = true;
   programs.chromium.enable = true;
+
+  #Wireshark
+  programs.wireshark.enable = true;
+  programs.wireshark.package = pkgs.wireshark;
 
   # Localsend.
   programs.localsend = {
@@ -132,9 +136,10 @@
       "bluetooth"
       "libvirtd"
       "kvm"
+      "wireshark"
     ];
   };
-  virtualisation.vmware.guest.package = pkgs.open-vm-tools;
+  # virtualisation.vmware.guest.package = pkgs.open-vm-tools;
   # Variables stuff.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
