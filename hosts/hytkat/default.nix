@@ -26,7 +26,7 @@
   # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_lqx;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
@@ -85,10 +85,25 @@
   graphics.nvidia.prime = {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
+    offload.enable = true;
+  };
+
+  #Asus
+  services.asusd.enable = true;
+  #RGB
+  services.hardware.openrgb.enable = true;
+  #Nvidia
+  hardware.nvidia.powerManagement.enable = true;
+  programs.gamemode.enable = true;
+
+  powerManagement.cpuFreqGovernor = "performance";
+
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
   };
 
   #MONGODB.
-  services.mongodb.enable = true;
+  services.mongodb.enable = false;
 
   # Virtualization stuff.
   podman.enable = true;

@@ -3,7 +3,7 @@
 {
   programs.librewolf = {
     enable = true;
-    profiles.debarchito = {
+    profiles.default = {
       isDefault = true;
       search.engines = {
         "NixOS Search - Packages" = {

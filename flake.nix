@@ -19,8 +19,8 @@
       url = "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dcachix = {
-      url = "github:debarchito/dcachix";
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -48,6 +48,7 @@
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = system;
         specialArgs = { inherit inputs; };
         modules = [
           inputs.niri.nixosModules.niri

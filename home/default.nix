@@ -13,19 +13,15 @@
       winDecStyles = [ "classic" ];
     })
     pkgs.autokey
+    pkgs.asusctl
     pkgs.bibata-cursors
-    pkgs.bottles
     pkgs.brave
     pkgs.catppuccin
-    pkgs.code-cursor
     pkgs.distrobox
     pkgs.erdtree
-    pkgs.fastfetch
-    pkgs.fd
     pkgs.ffmpeg
     pkgs.freerdp
     pkgs.gparted
-    pkgs.ghidra
     # pkgs.hdparm
     pkgs.i3-auto-layout
     pkgs.inotify-tools
@@ -44,6 +40,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
     pkgs.nix-search-tv
+    pkgs.openrgb
     pkgs.pika-backup
     pkgs.podman-compose
     pkgs.prismlauncher
@@ -53,6 +50,7 @@
     pkgs.smartmontools
     pkgs.steam
     pkgs.spectrwm
+    pkgs.spotify
     pkgs.sublime
     pkgs.telegram-desktop
     pkgs.theme-obsidian2
@@ -61,12 +59,10 @@
     pkgs.vscode
     pkgs.vscode-langservers-extracted
     pkgs.vesktop
-    pkgs.wasistlos
     pkgs.wl-clipboard
     pkgs.xfce4-docklike-plugin
     pkgs.xfce4-pulseaudio-plugin
     pkgs.yaml-language-server
-    pkgs.youtube-music
     # fonts
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.zed-editor
@@ -101,6 +97,7 @@
     ./yazi.nix
     ./zoxide.nix
     ./niri.nix
+    ./browser.nix
   ];
 
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";

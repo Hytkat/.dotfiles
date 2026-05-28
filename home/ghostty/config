@@ -1,7 +1,7 @@
 
 command = fish;
 
-theme = "Catppuccin Macchiato"
+theme = "dankcolors"
 shell-integration = fish
 window-decoration = server
 window-padding-x = 10

@@ -7,7 +7,7 @@
 
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
-      
+    
       boot.extraModprobeConfig = "options kvm_intel nested=1";
       boot.tmp.cleanOnBoot = true;
 
