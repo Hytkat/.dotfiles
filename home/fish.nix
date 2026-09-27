@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  # Declarative, not fish-specific -- applies to any program home-manager
+  # launches for you, not just interactive fish sessions.
+  home.sessionPath = [ "$HOME/.local/bin" ];
+
   programs.fish = {
     enable = true;
     plugins = [
@@ -35,12 +39,16 @@
     ];
     interactiveShellInit = ''
       set fish_greeting
+      # `shellAbbrs` can't place the cursor mid-expansion, so this one stays
+      # as a raw `abbr` call instead of living in the attrset below.
+      abbr -a --set-cursor="%" -- gcm 'git commit -S -m "%"';
     '';
     preferAbbrs = true;
     shellAbbrs = {
       cd = "z";
-      tree = "erd";
-      rp = "kwin_wayland --replace & plasmashell --replace &";
+      gc = "git commit -S";
+      gcl = "git clone";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     functions = {
       run = ''
@@ -50,9 +58,9 @@
         end
         nix run nixpkgs#$argv[1] -- $argv[2..-1]
       '';
-      run_unfree = ''
+      runu = ''
         if test (count $argv) -eq 0
-          echo "Usage: run_unfree <package> [<args>...]"
+          echo "Usage: runu <package> [<args>...]"
           return 1
         end
         NIXPKGS_ALLOW_UNFREE=1 nix run --impure nixpkgs#$argv[1] -- $argv[2..-1]
@@ -66,7 +74,10 @@
         for pkg in $argv
           set -a pkgs nixpkgs#$pkg
         end
-        nix shell $pkgs --command fish
+        nom shell $pkgs --command fish
+      '';
+      treep = ''
+        tree -L 4 -d -I "node_modules|dist|build|coverage|.git|.next|target"
       '';
     };
   };

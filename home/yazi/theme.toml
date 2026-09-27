@@ -23,7 +23,10 @@ count_selected = { fg = "#1e1e2e", bg = "#cba6f7" }
 border_symbol = "│"
 border_style = { fg = "#7f849c" }
 
-syntect_theme = "~/.config/yazi/catppuccin-mocha.tmTheme"
+syntect_theme = "~/.config/yazi/flavors"
+
+[flavor]
+dark = "rose-pine"
 
 [mode]
 normal_main = { fg = "#1e1e2e", bg = "#cba6f7", bold = true }
@@ -110,8 +113,8 @@ rules = [
   { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
   # Fallback
-  { name = "*", fg = "#cdd6f4" },
-  { name = "*/", fg = "#cba6f7" },
+  { url = "*", fg = "#cdd6f4" },
+  { url = "*/", fg = "#cba6f7" },
 ]
 
 [icon]

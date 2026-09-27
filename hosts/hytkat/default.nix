@@ -76,32 +76,32 @@
   environment.systemPackages = [
     pkgs.kitty
     pkgs.protonup-ng
+    pkgs.git
+    pkgs.helix
+    pkgs.brave
+    pkgs.ghostty
+    pkgs.fish
   ];
 
-  # Graphics stuff.
+    # Graphics
   graphics.enable = true;
+
   graphics.nvidia.enable = true;
+
   graphics.nvidia.prime.enable = true;
   graphics.nvidia.prime = {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
-    offload.enable = true;
   };
 
-  #Asus
-  services.asusd.enable = true;
-  #RGB
+  # RGB
   services.hardware.openrgb.enable = true;
-  #Nvidia
-  hardware.nvidia.powerManagement.enable = true;
+
+  # Gaming
   programs.gamemode.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
-
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 10;
-  };
-
+  
   #MONGODB.
   services.mongodb.enable = false;
 
@@ -152,6 +152,7 @@
       "libvirtd"
       "kvm"
       "wireshark"
+      "input"
     ];
   };
   # virtualisation.vmware.guest.package = pkgs.open-vm-tools;

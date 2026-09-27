@@ -2,6 +2,7 @@
 
 {
   # General home stuff.
+
   home.username = "hytkat";
   home.homeDirectory = "/home/hytkat";
   home.stateVersion = "24.11"; # DO NOT CHANGE!
@@ -13,12 +14,15 @@
       winDecStyles = [ "classic" ];
     })
     pkgs.autokey
-    pkgs.asusctl
     pkgs.bibata-cursors
     pkgs.brave
     pkgs.catppuccin
+    pkgs.camera-streamer
     pkgs.distrobox
+    pkgs.dell-530cdn
     pkgs.erdtree
+    pkgs.excalifont
+    # pkgs.eclipses
     pkgs.ffmpeg
     pkgs.freerdp
     pkgs.gparted
@@ -31,16 +35,18 @@
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.kde-gtk-config
     pkgs.legcord
-    pkgs.libreoffice-qt-fresh
+    pkgs.libreoffice-qt
     pkgs.librewolf
+    pkgs.libinput
     pkgs.lsof
     pkgs.maple-mono.NF
     pkgs.mpv
     pkgs.nixd
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
     pkgs.nix-output-monitor
     pkgs.nix-search-tv
     pkgs.openrgb
+    pkgs.obs-studio
     pkgs.pika-backup
     pkgs.podman-compose
     pkgs.prismlauncher
@@ -51,9 +57,7 @@
     pkgs.steam
     pkgs.spectrwm
     pkgs.spotify
-    pkgs.sublime
     pkgs.telegram-desktop
-    pkgs.theme-obsidian2
     pkgs.unrar
     pkgs.unzip
     pkgs.vscode
@@ -100,5 +104,4 @@
     ./browser.nix
   ];
 
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 }

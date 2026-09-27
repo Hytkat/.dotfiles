@@ -1,11 +1,11 @@
-include "dms/alttab.kdl";
-include "dms/binds.kdl";
-include "dms/colors.kdl";
-include "dms/cursor.kdl";
-include "dms/layout.kdl";
-include "dms/outputs.kdl";
-include "dms/wpblur.kdl";
-include "dms/windowrules.kdl";
+include optional=true "dms/alttab.kdl";
+include optional=true "dms/binds.kdl";
+include optional=true "dms/colors.kdl";
+include optional=true "dms/cursor.kdl";
+include optional=true "dms/layout.kdl";
+include optional=true "dms/outputs.kdl";
+include optional=true "dms/wpblur.kdl";
+include optional=true "dms/windowrules.kdl";
 
 environment {
   QT_QPA_PLATFORMTHEME "qt6ct"
@@ -36,7 +36,7 @@ input {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 layout {
-    gaps 16
+    gaps 5
     struts {
         left 0
         right 0
@@ -57,6 +57,12 @@ layout {
         gap 8
         gaps-between-tabs 4
         corner-radius 8
+    }
+}
+
+overview {
+    workspace-shadow {
+        off
     }
 }
 
@@ -127,7 +133,10 @@ binds {
 
     Mod+T repeat=false hotkey-overlay-title="Open Terminal" { spawn "ghostty" "--gtk-single-instance=true"; }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "nautilus";                             }
-    Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "librewolf";                            }
+    Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "firefox";                            }
+    Mod+C repeat=false hotkey-overlay-title="Open Code" { spawn "code"; }
+
+    Mod+W { spawn "dms" "ipc" "wallpaperCarousel" "toggle"; }
 
     Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                   }
     Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";   }
@@ -151,4 +160,46 @@ binds {
     XF86AudioRaiseVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "increment" "5";         }
     XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn "dms" "ipc" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true repeat=false   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
-} 
+}
+
+blur {
+    offset 6.0
+    noise 0.05
+    // saturation 1.2
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+
+    opacity 0.9
+
+    background-effect {
+        blur true
+        xray false
+    }
+
+    popups {
+        geometry-corner-radius 12
+        opacity 0.9
+
+        background-effect {
+            blur true
+            xray false
+            saturation 1.5
+        }
+    }
+}
+
+layer-rule {
+    opacity 0.9
+    match namespace="quickshell"
+    place-within-backdrop true
+
+    background-effect {
+        blur true
+        xray true
+        noise 0.05
+        saturation 3
+    }
+}

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 let
   qt6ct = pkgs.qt6Packages.qt6ct.overrideAttrs (oldAttrs: {
@@ -8,8 +8,6 @@ let
   });
 in
 {
-  programs.niri.config = null;
-
   xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 
   programs.dank-material-shell.enable = true;
@@ -27,5 +25,6 @@ in
     pkgs.pywalfox-native
     pkgs.xwayland-satellite
     qt6ct
+    pkgs.qt6Packages.qt5compat
   ];
 }

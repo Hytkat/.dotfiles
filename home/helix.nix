@@ -1,9 +1,10 @@
+{ lib, ... }:
 {
   programs.helix = {
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "catppuccin_macchiato";
+      theme = lib.mkForce "catppuccin-macchiato";
       editor = {
         bufferline = "multiple";
         color-modes = true;
