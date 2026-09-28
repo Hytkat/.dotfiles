@@ -8,11 +8,11 @@
   home.stateVersion = "24.11"; # DO NOT CHANGE!
   home.packages = [
     # themes and icons
-    (pkgs.catppuccin-kde.override {
-      flavour = [ "mocha" ];
-      accents = [ "mauve" ];
-      winDecStyles = [ "classic" ];
-    })
+    # (pkgs.catppuccin-kde.override {
+    #   flavour = [ "mocha" ];
+    #   accents = [ "mauve" ];
+    #   winDecStyles = [ "classic" ];
+    # })
     pkgs.autokey
     pkgs.bibata-cursors
     pkgs.brave
@@ -45,7 +45,6 @@
     pkgs.nixfmt
     pkgs.nix-output-monitor
     pkgs.nix-search-tv
-    pkgs.openrgb
     pkgs.obs-studio
     pkgs.pika-backup
     pkgs.podman-compose
@@ -60,6 +59,7 @@
     pkgs.telegram-desktop
     pkgs.unrar
     pkgs.unzip
+    pkgs.vlc
     pkgs.vscode
     pkgs.vscode-langservers-extracted
     pkgs.vesktop
@@ -102,6 +102,7 @@
     ./zoxide.nix
     ./niri.nix
     ./browser.nix
+    # ./dolphin.nix
   ];
 
 }

@@ -39,16 +39,22 @@
             libsForQt5.qt5ct
           ];
 
-          xdg.configFile = {
-              "kdeglobals".text = ''
-              [UiSettings]
-              ColorScheme=Matugen
+         xdg.configFile = {
+           "kdeglobals".text = ''
+           [UiSettings]
+           ColorScheme=DankMatugen
             '';
-            "Kvantum/kvantum.kvconfig".text = ''
-              [General]
-              theme=matugen
-            '';
-          };
+
+           "Kvantum/kvantum.kvconfig".text = ''
+            [General]
+            theme=matugen
+           '';
+           "matugen/config.toml".source =
+            ./niri/dankmaterialshell/matugen/config.toml;
+
+           "matugen/templates".source =
+            ./niri/dankmaterialshell/matugen/templates;
+};
 
           qt = {
             enable = true;

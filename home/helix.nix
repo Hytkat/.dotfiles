@@ -4,7 +4,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = lib.mkForce "catppuccin-macchiato";
+      theme = "dankcolors";
       editor = {
         bufferline = "multiple";
         color-modes = true;

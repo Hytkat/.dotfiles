@@ -1,0 +1,72 @@
+format = """
+$username\
+$hostname\
+$os\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$nix_shell\
+$python\
+$character
+"""
+
+[os]
+disabled = false
+
+[os.symbols]
+Arch = "󰣇 "
+Fedora = " "
+NixOS = "󱄅 "
+
+style = "bold {{colors.primary.default.hex}}"
+
+[hostname]
+ssh_symbol = " "
+
+[directory]
+style = "{{colors.primary.default.hex}}"
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[❯]({{colors.primary.default.hex}})"
+error_symbol = "[❯]({{colors.error.default.hex}})"
+vimcmd_symbol = "[❮]({{colors.tertiary.default.hex}})"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "{{colors.secondary.default.hex}}"
+
+[git_status]
+format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead$behind$stashed$diverged)]($style)"
+
+style = "{{colors.tertiary.default.hex}}"
+
+conflicted = " ⚠"
+untracked = " ?"
+modified = " ✎"
+staged = " ●"
+renamed = " »"
+deleted = " ⌫"
+stashed = " ≡"
+ahead = " ⇡"
+behind = " ⇣"
+diverged = " ⇕"
+
+[git_state]
+format = "\\([$state( $progress_current/$progress_total)]($style)\\) "
+style = "{{colors.secondary.default.hex}}"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "bold {{colors.primary.default.hex}}"
+
+[nix_shell]
+format = "@ [󱄅 $name](bold {{colors.secondary.default.hex}}) "
+
+[python]
+format = "@ [ $virtualenv](bold {{colors.primary.default.hex}}) "
