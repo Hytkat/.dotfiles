@@ -163,7 +163,7 @@ binds {
 }
 
 blur {
-    offset 6.0
+    offset 5.0
     noise 0.05
     // saturation 1.2
 }

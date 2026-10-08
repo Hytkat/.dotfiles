@@ -26,6 +26,12 @@
       url = "github:thiagokokada/nix-alien";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    spicetify-nix= {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -67,14 +73,21 @@
           ./modules/niri
         ];
       };
-
       homeConfigurations.hytkat = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+
         modules = [
           inputs.niri.homeModules.config
           inputs.dms.homeModules.niri
           inputs.dms.homeModules.dank-material-shell
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
+
+          inputs.spicetify-nix.homeManagerModules.spicetify
+
           ./home
         ];
       };

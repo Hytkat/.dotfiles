@@ -35,3 +35,11 @@ output_path = "/home/hytkat/.config/zellij/themes/dankcolors.kdl"
 [templates.starship]
 input_path = "/home/hytkat/.config/matugen/templates/starship/dankcolors.toml"
 output_path = "/home/hytkat/.config/starship.toml"
+
+[templates.kdeglobals]
+input_path = "/home/hytkat/.config/matugen/templates/kdeglobals/dankcolors.toml"
+output_path = "/home/hytkat/.config/kdeglobals"
+
+[templates.spicetify]
+input_path = "/home/hytkat/.config/matugen/templates/spicetify/dankcolors.ini"
+output_path = "/home/hytkat/.config/spicetify/Themes/Matugen/color.ini"

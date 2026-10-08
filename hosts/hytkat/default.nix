@@ -95,9 +95,12 @@
   };
 
   # RGB
-  services.hardware.openrgb.enable = true;
+ services.hardware.openrgb.enable = true;
 
-  # Gaming
+  # Ensure hardware bus permissions are explicitly allowed via udev rules
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0666", TAG+="uaccess"
+  '';
   programs.gamemode.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
@@ -122,6 +125,7 @@
   # AppImage stuff.
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
+  
 
   #NIX-LD
   # programs.nix-ld.enable = true;
@@ -153,6 +157,8 @@
       "kvm"
       "wireshark"
       "input"
+      "i2c"
+      "plugdev"
     ];
   };
   # virtualisation.vmware.guest.package = pkgs.open-vm-tools;

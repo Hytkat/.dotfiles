@@ -5,3 +5,4 @@
     enableNushellIntegration = false;
   };
 }
+ 

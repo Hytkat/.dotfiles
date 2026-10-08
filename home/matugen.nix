@@ -40,10 +40,13 @@
           ];
 
          xdg.configFile = {
-           "kdeglobals".text = ''
-           [UiSettings]
-           ColorScheme=DankMatugen
-            '';
+           "kdeglobals" = {
+            force = true;
+              text = ''
+            [UiSettings]
+            ColorScheme=DankMatugen
+                '';
+            };
 
            "Kvantum/kvantum.kvconfig".text = ''
             [General]

@@ -55,7 +55,7 @@
     pkgs.smartmontools
     pkgs.steam
     pkgs.spectrwm
-    pkgs.spotify
+    # pkgs.spotify
     pkgs.telegram-desktop
     pkgs.unrar
     pkgs.unzip
@@ -81,10 +81,6 @@
   # Allow unfree.
   nixpkgs.config.allowUnfree = true;
 
-  # Catppucin
-  # catppuccin.enable = true;
-  # catppuccin.flavor = "mocha";
-
   # Modules.
   imports = [
     ./eza.nix
@@ -102,6 +98,7 @@
     ./zoxide.nix
     ./niri.nix
     ./browser.nix
+    ./spicetify.nix
     # ./dolphin.nix
   ];
 
